@@ -61,20 +61,6 @@ function App() {
 
   const offlineUsers: Types.User[] = [];
   const users = [...onlineUsers, ...offlineUsers];
-  // const prettyMessages: PrettyMessage[] = messages
-  //   .slice()
-  //   .sort((a, b) => (a.sent.toDate() > b.sent.toDate() ? 1 : -1))
-  //   .map(message => {
-  //     const user = users.find(
-  //       u => u.identity.toHexString() === message.sender.toHexString()
-  //     );
-  //     return {
-  //       senderName: user?.name || message.sender.toHexString().substring(0, 8),
-  //       text: message.text,
-  //       sent: message.sent,
-  //       kind: Identity.zero().isEqual(message.sender) ? 'system' : 'user',
-  //     };
-  //   });
   const prettyMessages: PrettyMessage[] = Array.from(messages)
     .concat(systemMessages)
     .sort((a, b) => (a.sent.toDate() > b.sent.toDate() ? 1 : -1))
